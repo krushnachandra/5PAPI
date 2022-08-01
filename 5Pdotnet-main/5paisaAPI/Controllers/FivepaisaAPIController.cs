@@ -631,17 +631,8 @@ namespace _5paisaAPI.Controllers
             ResponseModel objResponseModel = new ResponseModel();
             try
             {
-                //_JsonData.Head.requestCode = _JsonData.RequestCode.History;
-                //_JsonData.ModifySMOOrder.ClientCode = _JsonData.Common.ClientCode;
-                //_JsonData.ModifySMOOrder.OrderRequesterCode = _JsonData.Common.ClientCode;
-
-                //ModifySMOOrderRequest Request = new ModifySMOOrderRequest
-                //{
-                //    head = _JsonData.Head,
-                //    //body = _JsonData.ModifySMOOrder
-                //};
-
-                string response = ApiRequest.SendApiRequestCookies(_History, "", "GET");
+                
+                string response = ApiRequest.SendApiRequestHistory(_History, "", "Get");
 
                 objResponseModel.ResponseData = JsonConvert.DeserializeObject<Response<HistoryResponse>>(response);
             }
